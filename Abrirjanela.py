@@ -1,17 +1,16 @@
 import pygame
 
+
 class Janela:
     def __init__(self, x, y, title):
-        self.x = x
-        self.y = y
+        self.size = (x,y)
         self.title = title
 
  
 def main():
     game = Janela(800,600,"Oi, sou o Pygame.")
-    pygame.init()
     pygame.display.set_caption(game.title)
-    screen = pygame.display.set_mode((game.x,game.y))
+    pygame.display.set_mode(game.size)
     running = True
 
     while running:
@@ -20,4 +19,5 @@ def main():
                 running = false
 
 if __name__ == "__main__":
+    pygame.init()
     main()
